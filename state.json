@@ -1,13 +1,10 @@
 {
-  "start_date": "2026-09-24",
+  "start_date": null,
   "last_slot": "",
   "update_offset": 742097582,
-  "found": true,
-  "messages_sent": 1,
-  "recent_messages": [
-    "Hey, it's Max! I'm here to help keep you motivated through the crazy Dutch housing hunt. Since it's day one and you're up late, maybe do a quick sweep on Holland2Stay or Pararius before crashing? 🤞"
-  ],
-  "pending_replies": [
-    "found"
-  ]
+  "found": false,
+  "reset_at": 1790205979,
+  "messages_sent": 0,
+  "recent_messages": [],
+  "pending_replies": []
 }

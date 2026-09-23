@@ -70,6 +70,7 @@ def load_state() -> dict:
         "last_slot": "",
         "update_offset": 0,
         "found": False,
+        "reset_at": 0,
         "messages_sent": 0,
         "recent_messages": [],
         "pending_replies": [],
@@ -124,7 +125,8 @@ def telegram(method: str, payload: dict) -> dict:
 
 
 def read_replies(state: dict) -> list[str]:
-    """Fetch new messages you sent to the bot. Messages from anyone else are ignored."""
+    """Fetch new messages you sent to the bot. Messages from anyone else, or sent
+    before the last memory reset, are ignored."""
     chat_id = os.environ["TELEGRAM_CHAT_ID"]
     updates = telegram(
         "getUpdates",
@@ -134,6 +136,8 @@ def read_replies(state: dict) -> list[str]:
     for update in updates:
         state["update_offset"] = update["update_id"] + 1
         msg = update.get("message") or {}
+        if msg.get("date", 0) < state["reset_at"]:
+            continue
         if str(msg.get("chat", {}).get("id")) == chat_id and msg.get("text"):
             texts.append(msg["text"])
     return texts
