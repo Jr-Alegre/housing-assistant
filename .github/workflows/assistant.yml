@@ -1,0 +1,53 @@
+name: Housing assistant
+
+on:
+  schedule:
+    # 05-22 UTC covers 07-22 Amsterdam time in both CEST and CET; the script only sends at
+    # 07,10,13,16,19,22 local, and the run an hour after a slot retries it if GitHub skipped one.
+    - cron: "7 5-22 * * *"
+  workflow_dispatch:
+    inputs:
+      send_now:
+        description: "Send a message right now (ignores the schedule)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: housing-assistant
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Run assistant
+        id: bot
+        run: python3 assistant.py ${{ inputs.send_now && '--force' || '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Save memory
+        run: |
+          git config user.name "housing-assistant"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update assistant memory"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Stop schedule once a place is found
+        if: steps.bot.outputs.found == 'true'
+        run: gh workflow disable assistant.yml
+        env:
+          GH_TOKEN: ${{ github.token }}
