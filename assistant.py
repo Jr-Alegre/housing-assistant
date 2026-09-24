@@ -29,15 +29,18 @@ SEND_HOURS = [7, 10, 13, 16, 19, 22]
 # If GitHub runs the job late, still send if we're within this many hours of the slot.
 LATE_WINDOW = timedelta(hours=2)
 
+# Search pages filtered to Eindhoven, max €1500 where the site supports filters in the URL.
 SITES = {
-    "Pararius": "https://www.pararius.com",
-    "Kamernet": "https://kamernet.nl",
-    "Holland2Stay": "https://holland2stay.com",
+    "Pararius": "https://www.pararius.com/apartments/eindhoven/0-1500",
+    # Kamernet's maxRent is in hundreds of euros: 15 = €1500.
+    "Kamernet": "https://kamernet.nl/en/for-rent/properties-eindhoven?maxRent=15",
+    "Holland2Stay": "https://www.holland2stay.com/residences",
     "MyHousing": "https://www.myhousing.nl",
-    "Househunting": "https://www.househunting.nl",
-    "Lightcity Housing": "https://www.lightcityhousing.nl",
-    "Brick Vastgoed": "https://www.brickvastgoed.nl",
-    "Rotsvast": "https://www.rotsvast.nl",
+    # Adding max-price makes Househunting drop the city filter, so only the city is set.
+    "Househunting": "https://househunting.nl/woningaanbod/?filter_location=eindhoven",
+    "Lightcity Housing": "https://lightcityhousing.nl/aanbod",
+    "Brick Vastgoed": "https://www.brickvastgoed.nl/aanbod?category=1&view=grid&sorting_method=date.desc",
+    "Rotsvast": "https://www.rotsvast.nl/wonen/",
 }
 
 GEMINI_MODELS = [m for m in (os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash") if m]
@@ -242,7 +245,7 @@ def write_congrats(state: dict) -> str:
 
 
 def format_message(text: str, first: bool) -> str:
-    links = " · ".join(f'<a href="{url}">{html.escape(name)}</a>' for name, url in SITES.items())
+    links = " · ".join(f'<a href="{html.escape(url)}">{html.escape(name)}</a>' for name, url in SITES.items())
     message = f"{html.escape(text)}\n\n{links}"
     if first:
         message += '\n\n<i>(Reply "found" when you get a place and I\'ll stop.)</i>'
