@@ -1,10 +1,12 @@
 {
-  "start_date": null,
-  "last_slot": "",
+  "start_date": "2026-09-24",
+  "last_slot": "2026-09-24T10",
   "update_offset": 742097582,
   "found": false,
   "reset_at": 1790205979,
-  "messages_sent": 0,
-  "recent_messages": [],
+  "messages_sent": 1,
+  "recent_messages": [
+    "Reminder from your housing buddy: refresh those searches. The early bird gets the viewing 🏠"
+  ],
   "pending_replies": []
 }
