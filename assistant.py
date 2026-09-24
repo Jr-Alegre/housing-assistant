@@ -34,7 +34,7 @@ SITES = {
     "Pararius": "https://www.pararius.com/apartments/eindhoven/0-1500",
     # Kamernet's maxRent is in hundreds of euros: 15 = €1500.
     "Kamernet": "https://kamernet.nl/en/for-rent/properties-eindhoven?maxRent=15",
-    "Holland2Stay": "https://www.holland2stay.com/residences",
+    "Holland2Stay": "https://www.holland2stay.com/residences?page=1&city%5Bfilter%5D=Eindhoven%2C29",
     "MyHousing": "https://www.myhousing.nl",
     # Adding max-price makes Househunting drop the city filter, so only the city is set.
     "Househunting": "https://househunting.nl/woningaanbod/?filter_location=eindhoven",
