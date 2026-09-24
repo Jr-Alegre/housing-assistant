@@ -10,7 +10,7 @@ on:
       send_now:
         description: "Send a message right now (ignores the schedule)"
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: write
