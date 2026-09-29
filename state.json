@@ -1,17 +1,17 @@
 {
   "start_date": "2026-09-24",
-  "last_slot": "2026-09-29T07",
+  "last_slot": "2026-09-29T10",
   "update_offset": 742097582,
   "found": false,
   "reset_at": 1790205979,
-  "messages_sent": 30,
+  "messages_sent": 31,
   "recent_messages": [
-    "Reminder from your housing buddy: refresh those searches. The early bird gets the viewing 🏠",
     "You know what I'm going to say... time for a quick housing round!",
     "Hey, quick nudge: new listings drop all the time. Got 5 minutes for a scroll?",
     "Housing check! Even a two-minute scroll counts.",
     "Hey you, go find your future home. I'll wait 😄",
-    "Small habit, big payoff: one quick check of the listings right now?"
+    "Small habit, big payoff: one quick check of the listings right now?",
+    "Don't let a good place slip past you. Quick look at the sites?"
   ],
   "pending_replies": []
 }
