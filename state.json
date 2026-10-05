@@ -1,17 +1,17 @@
 {
   "start_date": "2026-09-24",
-  "last_slot": "2026-10-05T16",
+  "last_slot": "2026-10-05T19",
   "update_offset": 742097582,
   "found": false,
   "reset_at": 1790205979,
-  "messages_sent": 69,
+  "messages_sent": 70,
   "recent_messages": [
-    "Hey you, go find your future home. I'll wait 😄",
     "Hey, quick nudge: new listings drop all the time. Got 5 minutes for a scroll?",
     "Reminder from your housing buddy: refresh those searches. The early bird gets the viewing 🏠",
     "Small habit, big payoff: one quick check of the listings right now?",
     "Estate agents are usually back from lunch and posting fresh listings right about now. Might be the perfect time for a quick sweep on Pararius and Kamernet 🤞",
-    "Don't let a good place slip past you. Quick look at the sites?"
+    "Don't let a good place slip past you. Quick look at the sites?",
+    "You know what I'm going to say... time for a quick housing round!"
   ],
   "pending_replies": []
 }
