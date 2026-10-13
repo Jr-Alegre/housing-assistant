@@ -1,17 +1,17 @@
 {
   "start_date": "2026-09-24",
-  "last_slot": "2026-10-13T13",
+  "last_slot": "2026-10-13T16",
   "update_offset": 742097582,
   "found": false,
   "reset_at": 1790205979,
-  "messages_sent": 116,
+  "messages_sent": 117,
   "recent_messages": [
-    "Reminder from your housing buddy: refresh those searches. The early bird gets the viewing 🏠",
     "Checking in! Have you looked at the sites yet today? Someone's dream room gets posted every hour.",
     "Before you call it a night, do one quick sweep of Holland2Stay and Pararius. Sometimes listings sneak on late, and catching them now puts you first in line tomorrow 🤞",
     "Up and at 'em! Tuesday mornings can be surprisingly good for fresh uploads. Might be worth doing a fast sweep on Househunting and Holland2Stay before the day properly gets going ☀️",
     "You know what I'm going to say... time for a quick housing round!",
-    "Consistency wins this game. Quick check of the sites?"
+    "Consistency wins this game. Quick check of the sites?",
+    "Hey you, go find your future home. I'll wait 😄"
   ],
   "pending_replies": []
 }
