@@ -1,8 +1,8 @@
 {
   "start_date": "2026-09-24",
   "last_slot": "2026-10-15T19",
-  "update_offset": 742097582,
-  "found": false,
+  "update_offset": 742097583,
+  "found": true,
   "reset_at": 1790205979,
   "messages_sent": 130,
   "recent_messages": [
@@ -13,5 +13,7 @@
     "New hour, new listings. Take a peek?",
     "You know what I'm going to say... time for a quick housing round!"
   ],
-  "pending_replies": []
+  "pending_replies": [
+    "found"
+  ]
 }
